@@ -1,0 +1,30 @@
+version: 2
+updates:
+- package-ecosystem: gradle
+  directory: "/./library"
+  schedule:
+    interval: weekly
+    time: "21:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: org.robolectric:robolectric
+    versions:
+    - "4.5"
+  - dependency-name: junit:junit
+    versions:
+    - 4.13.1
+  commit-message:
+    prefix: chore(deps)
+- package-ecosystem: gradle
+  directory: "/./demo"
+  schedule:
+    interval: weekly
+    time: "21:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: com.google.maps.android:android-maps-utils
+    versions:
+    - 2.2.0
+    - 2.2.1
+  commit-message:
+    prefix: chore(deps)
